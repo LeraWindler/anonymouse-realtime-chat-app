@@ -7,7 +7,7 @@ function onConnect(socket){
   socket.emit('hello', 'can you hear me?', 1, 2, 'abc');
 
   // sending to all clients except sender
-  socket.broadcast.emit('broadcast', 'hello friends!');
+  socket.broadcast.emit('broadcast', 'hello friends ');
 
   // sending to all clients in 'game' room except sender
   socket.to('game').emit('nice game', "let's play a game");
@@ -40,7 +40,7 @@ function onConnect(socket){
   socket.volatile.emit('maybe', 'do you really need it?');
 
   // specifying whether the data to send has binary data
-  socket.binary(false).emit('what', 'I have no binaries!');
+  socket.binary(false).emit('what', 'I have no binaries*');
 
   // sending to all clients on this node (when using multiple nodes)
   io.local.emit('hi', 'my lovely babies');
@@ -48,4 +48,4 @@ function onConnect(socket){
   // sending to all connected clients
   io.emit('an event sent to all connected clients');
 
-};
+}; 
